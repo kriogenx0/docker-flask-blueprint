@@ -4,6 +4,17 @@ docker-flask-blueprint is a blueprint template to be used to bootstrap new flask
 
 A single Dockerfile will build a flask application using Nginx and either Gunicorn or uWSGI.
 
+### Single Line Start with Docker Compose
+
+Just run:
+
+```
+docker-compose up --build
+```
+
+
+## Manually Run Docker
+
 ### Build Docker Image
 
 This creates the image with the name `flaskapp`.
