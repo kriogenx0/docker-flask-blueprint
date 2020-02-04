@@ -1,0 +1,16 @@
+.c-text_field
+{
+  &.text_field-read_mode input
+  {
+    box-shadow: none;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: inherit;
+
+    // Issues with Safari
+    // &[disabled]
+    // {
+    //   color: #ccc;
+    // }
+  }
+}

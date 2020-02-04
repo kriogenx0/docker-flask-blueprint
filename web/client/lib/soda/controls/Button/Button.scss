@@ -1,0 +1,26 @@
+@import '../../styles/_common';
+
+.btn-default,
+.btn-primary,
+.btn-danger
+{
+  border-radius: 3px;
+  box-shadow: none;
+  text-shadow: none;
+  background-image: none;
+}
+
+.btn-default
+{
+  background-color: #fff;
+}
+.btn-primary
+{
+  background-image: none;
+  background-color: $active_color;
+  border-color: transparent;
+}
+.btn-sm
+{
+  min-width: auto;
+}

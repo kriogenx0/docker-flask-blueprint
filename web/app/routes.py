@@ -1,13 +1,31 @@
+from flask import send_from_directory
 from app import app
-import os
 
-@app.route("/")
-def index():
+# API
 
-    # Use os.getenv("key") to get environment variables
-    app_name = os.getenv("APP_NAME")
+# Projects
+@app.route('/api/projects')
+def projects_index():
+    return "index"
 
-    if app_name:
-        return f"Hello from {app_name} running in a Docker container behind Nginx!"
+@app.route('/api/projects', methods=['POST'])
+def projects_create():
+    return "create"
 
-    return "Hello from Flask"
+@app.route('/api/projects/<path:stuff>')
+def projects_show():
+    return "yo"
+
+# Instances
+
+# Pings
+
+# ---
+
+# SPA
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def catch_all(path):
+    # return 'You want path: %s' % path
+    return send_from_directory('static', 'index.html')
+    # return app.send_static_file('static/index.html')

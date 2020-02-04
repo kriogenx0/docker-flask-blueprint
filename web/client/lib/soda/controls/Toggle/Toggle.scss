@@ -1,0 +1,105 @@
+@import '../../styles/common';
+// $active_disabled_color
+
+$size: 20px;
+
+.control-toggle
+{
+  position: relative;
+  display: inline-block;
+  width: $size * 2 + 8;
+  height: $size + 8;
+  user-select: none;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    outline: 0 none;
+  }
+
+  .slider
+  {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $inactive_color;
+    @include dark {
+      background-color: #444;
+    }
+
+    -webkit-transition: .4s;
+    transition: .4s;
+
+    &:before
+    {
+      position: absolute;
+      content: "";
+      height: $size;
+      width: $size;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    // Round
+    border-radius: $size;
+
+    &:before
+    {
+      border-radius: 50%;
+    }
+  }
+
+  input:checked + .slider
+  {
+    background-color: $active_color;
+
+    &:before
+    {
+      -webkit-transform: translateX($size);
+      -ms-transform: translateX($size);
+      transform: translateX($size);
+    }
+  }
+
+  input:focus
+  {
+    outline: 0 none;
+  }
+
+  &.toggle-disabled
+  {
+    // Unchecked
+    .slider
+    {
+      cursor: not-allowed;
+      background-color: #eee;
+      @include dark {
+        background-color: #333;
+      }
+
+      // Circle
+      &:before
+      {
+        @include dark {
+          background-color: #888;
+        }
+      }
+    }
+
+    // Checked
+    input:checked + .slider
+    {
+      background-color: $active_disabled_color;
+      @include dark {
+        background-color: $active_disabled_dark;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.c-tag_input
+{
+  input
+  {
+    max-width: 200px;
+  }
+
+  .tag
+  {
+    display: inline-block;
+    padding: 6px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.05);
+    user-select: none;
+
+    &:hover
+    {
+      background-color: rgba(0,0,0,0.1);
+    }
+
+    &.deletable
+    {
+      cursor: pointer;
+    }
+
+    .control-icon
+    {
+      color: #ccc;
+      margin-left: 5px;
+    }
+
+    &:hover
+    {
+      .control-icon
+      {
+        color: #000;
+      }
+    }
+  }
+}

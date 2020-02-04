@@ -48,6 +48,7 @@ EXPOSE 80
 
 # Run
 CMD nginx && \
+  # FLASK_ENV=development flask run --port 8080
   uwsgi server/uwsgi.ini
 
 # CMD ["uwsgi", "app.ini"]

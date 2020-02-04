@@ -1,0 +1,97 @@
+@import './common';
+
+body
+{
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: "SF Pro Text", "SF Hello", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include dark {
+    background-color: #111;
+    color: #eee;
+  }
+}
+
+html {
+  --text-color-normal: #0a244d;
+  --text-color-light: #8cabd9;
+}
+
+html[data-theme='dark'] {
+  --text-color-normal: hsl(210, 10%, 62%);
+  --text-color-light: hsl(210, 15%, 35%);
+  --text-color-richer: hsl(210, 50%, 72%);
+  --text-color-highlight: hsl(25, 70%, 45%);
+}
+
+h1,
+h2,
+h3,
+h4
+{
+  font-family: "SF Pro Display", "SF Hello", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    sans-serif;
+}
+
+a
+{
+  @include dark {
+    color: #999;
+    &:hover
+    {
+      color: $active_color;
+    }
+  }
+}
+
+.form-control
+{
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  @include dark {
+    background-color: #222;
+    color: #bbb;
+    border-color: #333;
+  }
+
+  &:focus,
+  &:visited
+  {
+    @include dark {
+      color: #fff;
+      background: #222;
+      border-color: #ccc;
+      // border-color: $active_color;
+      // box-shadow: 0 0 8px rgba(255,255,255,.5);
+      box-shadow: none;
+    }
+  }
+
+  &[disabled]
+  {
+    @include dark {
+      background: #161616;
+    }
+  }
+}
+
+// Auto Fill Colors
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-color: $active_color;
+  -webkit-text-fill-color: $active_color;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 0s ease-in-out 0s; // Hack to stop background-color
+}

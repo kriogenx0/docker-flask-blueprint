@@ -1,0 +1,32 @@
+@mixin mobile {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: 1260px) {
+    @content;
+  }
+}
+
+@mixin dark {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+@mixin no_select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+$resize_transition: 0.3s;
+
+$active_color: #0071E3;
+$active_over_color: #4A90E2;
+$active_disabled_color: lighten($active_color, 40%);
+$active_disabled_dark: darken($active_color, 20%);
+
+$inactive_color: #A1A5A9;

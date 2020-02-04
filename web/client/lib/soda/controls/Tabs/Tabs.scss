@@ -1,0 +1,65 @@
+@import '../../styles/common';
+
+.ui-tabs
+{
+
+  ul {
+    display: flex;
+    list-style: none;
+    padding-left: 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+
+    @include dark {
+      border-bottom-color: #333;
+    }
+  }
+
+  &.tab-align-right
+  {
+    ul
+    {
+      justify-content: flex-end;
+    }
+  }
+
+  li {
+    padding-right: 3em;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    position: relative;
+    bottom: -1px;
+  }
+
+  .tab-link {
+    color: #ccc;
+    @include dark {
+      color: #444;
+    }
+    border-bottom: 1px solid transparent;
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1;
+    padding-bottom: 1rem;
+    padding: 14px 0 16px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+    user-select: none;
+
+    font-size: 16px;
+
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .current .tab-link
+  {
+    color: $active_color;
+    border-bottom-color: $active_color;
+  }
+}

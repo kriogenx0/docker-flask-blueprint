@@ -1,0 +1,93 @@
+@import './common';
+
+tr.linked
+{
+  cursor: pointer;
+  user-select: none;
+}
+
+.table-list
+{
+  font-size: 14px;
+  width: 100%;
+  border-spacing: 0;
+
+  th,
+  td
+  {
+    padding: 15px;
+    border-bottom: 1px solid #f3f3f3;
+    @include dark {
+      border-bottom-color: #444;
+    }
+
+    transition: padding $resize_transition;
+
+    @include mobile {
+      padding: 10px;
+    }
+
+    @include large {
+      padding: 25px;
+    }
+  }
+
+  th
+  {
+    text-align: left;
+    color: #999;
+    font-weight: 400;
+  }
+
+  td
+  {
+    color: #444;
+    @include dark {
+      color: #ccc;
+    }
+
+    &.actions
+    {
+      width: 150px;
+      min-width: 120px;
+      text-align: right;
+
+      .btn-toolbar .btn
+      {
+        float: none;
+      }
+    }
+  }
+
+  tr
+  {
+    &.linked:hover td
+    {
+      background-color: #f6f6f6;
+      color: #000;
+      @include dark {
+        background-color: #222;
+        color: #fff;
+      }
+    }
+
+    .hover_actions
+    {
+      display: none;
+    }
+
+    &:hover .hover_actions
+    {
+      display: block;
+    }
+
+    &.disabled td
+    {
+      &,
+      a
+      {
+        color: #ccc;
+      }
+    }
+  }
+}

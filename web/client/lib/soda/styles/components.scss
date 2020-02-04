@@ -1,0 +1,98 @@
+@import '_common';
+
+hr
+{
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+//
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+.panel
+{
+  border-radius: 5px;
+  padding: 40px;
+
+  background-color: #fff;
+  border: 1px solid #eee;
+
+  @include dark {
+    background-color: #000;
+    border-color: #444;
+  }
+
+  > .panel-heading
+  {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+
+
+.dictionary
+{
+  > li
+  {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    &:after { // clearfix
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0;
+    }
+
+    > b
+    {
+      color: #999;
+      width: 150px;
+      flex-shrink: 1;
+    }
+
+    > div,
+    > span
+    {
+      flex-grow: 1;
+    }
+  }
+}
+
+// modals
+.modal {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+table
+{
+  width: 100%;
+}

@@ -44,3 +44,7 @@ Thumbs.db
 # Python
 __pycache__
 env
+
+# NodeJs
+node_modules
+compiled

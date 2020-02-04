@@ -1,0 +1,52 @@
+@import '_common';
+
+// Primitive Tags
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: #666;
+  background-color: #f1f1f1;
+  padding: 15px;
+  display: block;
+
+  &.error
+  {
+    background-color: #f9f2f4;
+    color: #c7254e;
+  }
+}
+
+a
+{
+  text-decoration: none;
+  color: #444;
+  transition: color 100ms;
+
+  &:hover
+  {
+    text-decoration: underline;
+    color: #111;
+  }
+}
+
+h1
+{
+  font-weight: 200;
+
+  transition: font-size $resize_transition;
+
+  @include mobile {
+    font-size: 26px;
+  }
+}
+
+h2
+{
+  font-weight: 200;
+}
+
+h3
+{
+  font-weight: 200;
+}
