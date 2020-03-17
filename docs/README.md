@@ -1,4 +1,4 @@
-# Lighthouse
+# Blueprint
 
 Simple app for monitoring web instances.
 

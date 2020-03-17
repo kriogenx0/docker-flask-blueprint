@@ -29,9 +29,9 @@ let app = (
   <Router>
     <AppLayout>
       <Switch>
-        <Route exact path='/projects' component={ProjectList} />
+        <Route exact path='/' component={ProjectList} />
 
-        <Redirect exact path='/' to='/projects'/>
+        <Redirect exact path='/projects' to='/'/>
 
         {/*<Route component={NoMatch} />*/}
       </Switch>

@@ -2,14 +2,16 @@ version: "3.7"
 
 services:
 
-  blueprint-web:
-    build: web
-    container_name: blueprint-web
+  # blueprint-web:
+  #   build: web
+  #   restart: always
+  #   environment:
+  #     - APP_NAME=MyFlaskApp
+  #   ports:
+  #     - 5000:5000
+
+  blueprint-client:
+    build: client
     restart: always
-    environment:
-      - APP_NAME=MyFlaskApp
     ports:
-      - "80:80"
-    expose:
-      - 8080
-      - 80
+      - 3000:3000

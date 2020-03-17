@@ -17,7 +17,7 @@ const config = {
   },
 
   output: {
-    path: resolve(__dirname, '../../app/static/compiled'),
+    path: resolve(__dirname, '../static/compiled'),
     filename: '[name]-compiled.js'
   },
 
